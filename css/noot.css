@@ -1,0 +1,281 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin: 0px;
+}
+
+header {
+    height: 50px;
+    background-color: white;
+    width: 66%;
+    margin: auto;
+    padding: 10px;
+    text-align: left;
+}
+
+table {
+    text-align: left;
+}
+
+td {
+    padding-right: 15px;
+}
+
+footer {
+    background-color: white;
+    width: 66%;
+    margin: auto;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    background-color: palevioletred;
+}
+
+.vislegenda {
+    padding-top: 25px;
+}
+
+.noottitel {
+    padding-top: 25px;
+}
+
+.startpagina {
+    background-image: url(../Schubben_Verticaal_NOOT.jpg);
+    background-repeat: repeat;
+    color: black;
+    text-align: center;
+    margin: auto;
+}
+
+.witdoorzichtig {
+    background-color: white;
+    color: black;
+    width: 66%;
+    padding: 50px;
+    margin: auto;
+}
+
+.welkomtitel{
+    font-size: 100px;
+}
+
+.visstekkieknop {
+    color: white;
+    background-color: gray;
+    padding: 15px;
+    margin-top: 25px;
+    text-decoration: none;
+}
+
+.visstekkieknop:hover {
+    background-color: darkslategray;
+}
+
+.visstekkie:hover, .visstekkie:active{
+    background-color: darkgray;
+}
+
+section{
+    height: 100vh;
+    width: calc(100% - 400px);
+}
+
+aside {
+    width: 400px;
+    background-color: #2f4f4f;
+    float: left;
+    padding-left: 10px;
+    padding-top: 25px;
+    height: 100vh;
+    box-shadow: 10px 0px 15px 0px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.ol-zoom {
+    left: unset;
+    right: 8px;
+}
+
+.ol-control button{
+    background-color: darkslategray;
+}
+
+.ms-nobullet {
+    list-style-type: none;
+    padding-left: 3px;
+}
+
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    bottom: 12px;
+    left: -150px;
+    width: 300px;
+    color: black;
+}
+
+.ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 12px;
+    left: 140px;
+}
+
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 12px;
+    left: 140px;
+}
+
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    color: darkslategrey;
+  }
+
+  .ol-popup-closer:after {
+    content: "✖";
+    color: darkslategray;
+}
+
+
+#openclosebuttons {
+    float: right;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+}
+
+#openbutton {
+    display: none;
+}
+
+.layerswitcherpng {
+    padding: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+}
+
+.pointer {cursor: pointer;}
+
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    outline: 2px solid #f00;
+  }
+  
+
+input[type="checkbox"]
+{
+    position: relative;
+    width: 40px;
+    height: 20px;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+    transition: .5s;
+}
+
+input:checked[type="checkbox"]
+{
+    background: #ff9f36; 
+}
+
+input[type="checkbox"]:before
+{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    transition: .5s;
+}
+
+input:checked[type="checkbox"]:before
+{
+    left: 20px;
+}
+
+@media screen and (min-width: 601px) {
+    section {
+        width: calc(100% - 400px);
+        float: right;
+    }
+
+    aside {
+        width: 400px;
+        float: left;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    aside {
+        width: 40px;
+        position: fixed;
+        left: 0;
+        z-index: 99;
+    }
+
+    #sidebarcontent {
+        display: none;
+    }
+        
+    section {
+        width: calc(100% - 40px);
+    }
+
+    #openbutton {
+        display: inline;
+    }
+
+    #closebutton {
+        display: none;
+    }
+
+    header {
+        font-size: 10px;
+    }
+
+}
